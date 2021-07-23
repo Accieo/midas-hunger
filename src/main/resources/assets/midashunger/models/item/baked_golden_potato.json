@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "midashunger:item/baked_golden_potato"
+    }
+  }

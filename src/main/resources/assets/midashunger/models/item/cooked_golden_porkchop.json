@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "midashunger:item/cooked_golden_porkchop"
+    }
+  }

@@ -1,0 +1,25 @@
+{
+    "parent": "block/block",
+    "textures": {
+        "particle": "midashunger:block/dried_golden_kelp_side",
+        "down": "midashunger:block/dried_golden_kelp_bottom",
+        "up": "midashunger:block/dried_golden_kelp_top",
+        "north": "midashunger:block/dried_golden_kelp_side",
+        "east": "midashunger:block/dried_golden_kelp_side",
+        "south": "midashunger:block/dried_golden_kelp_side",
+        "west": "midashunger:block/dried_golden_kelp_side"
+    },
+    "elements": [
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "texture": "#down", "cullface": "down" },
+                "up":    { "texture": "#up", "cullface": "up" },
+                "north": { "texture": "#north", "cullface": "north" },
+                "south": { "uv": [16, 0, 0, 16], "texture": "#south", "cullface": "south" },
+                "west":  { "texture": "#west", "cullface": "west" },
+                "east":  { "uv": [16, 0, 0, 16], "texture": "#east", "cullface": "east" }
+            }
+        }
+    ]
+}

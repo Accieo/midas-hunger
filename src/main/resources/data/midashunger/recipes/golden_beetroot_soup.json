@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "BBB",
+      "BBB",
+      " M "
+    ],
+    "key": {
+      "B": {
+        "item": "midashunger:golden_beetroot"
+      },
+      "M": {
+        "item": "minecraft:bowl"
+      }
+    },
+    "result": {
+      "item": "midashunger:golden_beetroot_soup"
+    }
+  }

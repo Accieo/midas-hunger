@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "midashunger:block/sweet_golden_berry_bush_stage0"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "midashunger:dried_golden_kelp_block"
+      }
+    ],
+    "result": {
+      "item": "midashunger:dried_golden_kelp",
+      "count": 9
+    }
+  }
