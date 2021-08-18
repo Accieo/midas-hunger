@@ -1,4 +1,4 @@
-package accieo.midas.hunger;
+package accieo.midas.hunger.blocks;
 
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.render.RenderLayer;

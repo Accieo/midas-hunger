@@ -1,5 +1,7 @@
-package accieo.midas.hunger;
+package accieo.midas.hunger.items;
 
+import accieo.midas.hunger.blocks.MidasBlocks;
+import accieo.midas.hunger.foodcomponents.MidasFoodComponents;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;

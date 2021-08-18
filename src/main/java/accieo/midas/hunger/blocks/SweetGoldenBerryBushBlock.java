@@ -1,6 +1,8 @@
-package accieo.midas.hunger;
+package accieo.midas.hunger.blocks;
 
 import java.util.Random;
+
+import accieo.midas.hunger.items.MidasItems;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.AbstractBlock;

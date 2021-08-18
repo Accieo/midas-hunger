@@ -1,4 +1,4 @@
-package accieo.midas.hunger;
+package accieo.midas.hunger.blocks;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;

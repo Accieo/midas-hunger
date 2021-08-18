@@ -1,4 +1,4 @@
-package accieo.midas.hunger;
+package accieo.midas.hunger.foodcomponents;
 
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;

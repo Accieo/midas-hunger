@@ -9,6 +9,8 @@ import net.minecraft.village.TradeOffer;
 import net.minecraft.village.VillagerProfession;
 import static net.minecraft.server.command.CommandManager.literal;
 
+import accieo.midas.hunger.items.MidasItems;
+
 public class MidasVillagerTrades {
     public static void registerTrades(){
     TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 5, factories -> {
