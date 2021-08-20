@@ -41,6 +41,8 @@ public class MidasItems {
 			new Item.Settings().group(ItemGroup.FOOD).food(MidasFoodComponents.COOKED_GOLDEN_BEEF));
 	public static final Item SWEET_GOLDEN_BERRIES = new AliasedBlockItem(MidasBlocks.SWEET_GOLDEN_BERRY_BUSH,
 			new Item.Settings().group(ItemGroup.FOOD).food(MidasFoodComponents.SWEET_GOLDEN_BERRIES));
+	public static final Item GOLDEN_PUMPKIN_PIE = new Item(
+			new Item.Settings().group(ItemGroup.FOOD).food(MidasFoodComponents.GOLDEN_PUMPKIN_PIE));
 
 	public static void registerItems() {
 
@@ -63,6 +65,7 @@ public class MidasItems {
 				COOKED_GOLDEN_PORKCHOP);
 		Registry.register(Registry.ITEM, new Identifier("midashunger", "cooked_golden_rabbit"), COOKED_GOLDEN_RABBIT);
 		Registry.register(Registry.ITEM, new Identifier("midashunger", "cooked_golden_beef"), COOKED_GOLDEN_BEEF);
+		Registry.register(Registry.ITEM, new Identifier("midashunger", "golden_pumpkin_pie"), GOLDEN_PUMPKIN_PIE);
 
 	}
 

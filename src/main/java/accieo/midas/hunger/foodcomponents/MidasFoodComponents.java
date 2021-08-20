@@ -78,4 +78,9 @@ public class MidasFoodComponents {
     .hunger(10).saturationModifier(1.2F)
     .build());
 
+    public static final FoodComponent GOLDEN_PUMPKIN_PIE = (new FoodComponent.Builder()
+    .hunger(8).saturationModifier(1.2F)
+    .statusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 14400, 0), 1F))
+    .alwaysEdible().build();
+
 }
