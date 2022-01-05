@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "midashunger:golden_kelp"
+  },
+  "result": "midashunger:dried_golden_kelp",
+  "experience": 0.2,
+  "cookingtime": 200
+}

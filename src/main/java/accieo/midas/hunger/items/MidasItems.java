@@ -11,6 +11,8 @@ import net.minecraft.util.registry.Registry;
 
 public class MidasItems {
 
+	public static final Item GOLDEN_KELP = new Item(
+		new Item.Settings().group(ItemGroup.FOOD));
 	public static final Item DRIED_GOLDEN_KELP = new Item(
 			new Item.Settings().group(ItemGroup.FOOD).food(MidasFoodComponents.DRIED_GOLDEN_KELP));
 	public static final Item COOKED_GOLDEN_SALMON = new Item(
@@ -46,6 +48,8 @@ public class MidasItems {
 
 	public static void registerItems() {
 
+		Registry.register(Registry.ITEM, new Identifier("midashunger", "golden_kelp"), new BlockItem(
+				MidasBlocks.GOLDEN_KELP, new Item.Settings().group(ItemGroup.DECORATIONS)));
 		Registry.register(Registry.ITEM, new Identifier("midashunger", "dried_golden_kelp"), DRIED_GOLDEN_KELP);
 		Registry.register(Registry.ITEM, new Identifier("midashunger", "dried_golden_kelp_block"), new BlockItem(
 				MidasBlocks.DRIED_GOLDEN_KELP_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
@@ -66,7 +70,6 @@ public class MidasItems {
 		Registry.register(Registry.ITEM, new Identifier("midashunger", "cooked_golden_rabbit"), COOKED_GOLDEN_RABBIT);
 		Registry.register(Registry.ITEM, new Identifier("midashunger", "cooked_golden_beef"), COOKED_GOLDEN_BEEF);
 		Registry.register(Registry.ITEM, new Identifier("midashunger", "golden_pumpkin_pie"), GOLDEN_PUMPKIN_PIE);
-
 	}
 
 }

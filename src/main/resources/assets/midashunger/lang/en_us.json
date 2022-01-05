@@ -15,6 +15,9 @@
     "item.midashunger.cooked_golden_rabbit": "Cooked Golden Rabbit",
     "item.midashunger.cooked_golden_beef": "Cooked Golden Beef",
     "item.midashunger.golden_pumpkin_pie": "Golden Pumpkin Pie",
+    "item.midashunger.golden_kelp": "Golden Kelp",
     "block.midashunger.sweet_golden_berry_bush": "Sweet Golden Berry Bush",
-    "block.midashunger.dried_golden_kelp_block": "Dried Golden Kelp Block"
+    "block.midashunger.dried_golden_kelp_block": "Dried Golden Kelp Block",
+    "block.midashunger.golden_kelp": "Golden Kelp",
+    "block.midashunger.golden_kelp_plant": "Golden Kelp"
 }
