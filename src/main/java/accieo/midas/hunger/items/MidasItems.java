@@ -2,17 +2,12 @@ package accieo.midas.hunger.items;
 
 import accieo.midas.hunger.blocks.MidasBlocks;
 import accieo.midas.hunger.foodcomponents.MidasFoodComponents;
-import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class MidasItems {
 
-	public static final Item GOLDEN_KELP = new Item(
-		new Item.Settings().group(ItemGroup.FOOD));
 	public static final Item DRIED_GOLDEN_KELP = new Item(
 			new Item.Settings().group(ItemGroup.FOOD).food(MidasFoodComponents.DRIED_GOLDEN_KELP));
 	public static final Item COOKED_GOLDEN_SALMON = new Item(
@@ -25,7 +20,7 @@ public class MidasItems {
 			new Item.Settings().group(ItemGroup.FOOD).food(MidasFoodComponents.COOKED_GOLDEN_CHICKEN));
 	public static final Item GOLDEN_BEETROOT = new Item(
 			new Item.Settings().group(ItemGroup.FOOD).food(MidasFoodComponents.GOLDEN_BEETROOT));
-	public static final Item GOLDEN_BEETROOT_SOUP = new Item(
+	public static final Item GOLDEN_BEETROOT_SOUP = new StewItem(
 			new Item.Settings().maxCount(1).group(ItemGroup.FOOD).food(MidasFoodComponents.GOLDEN_BEETROOT_SOUP));
 	public static final Item GOLDEN_CHORUS_FRUIT = new Item(
 			new Item.Settings().group(ItemGroup.FOOD).food(MidasFoodComponents.GOLDEN_CHORUS_FRUIT));

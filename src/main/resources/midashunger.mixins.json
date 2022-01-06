@@ -4,6 +4,7 @@
   "package": "accieo.midas.hunger.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "FoxEntityMixin"
   ],
   "client": [
   ],
