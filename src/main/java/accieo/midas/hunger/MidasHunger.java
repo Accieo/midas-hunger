@@ -6,7 +6,7 @@ import net.fabricmc.api.ModInitializer;
 
 public class MidasHunger implements ModInitializer {
 
-
+	public static final String MOD_ID = "midashunger";
 
 	@Override
 	public void onInitialize() {

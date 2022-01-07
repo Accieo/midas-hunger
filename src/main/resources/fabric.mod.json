@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Midas Hunger",
-  "description": "Adds golden variants of food items that give a few status effects",
+  "description": "Adds golden variants of food items that give different status effects",
   "authors": [
     "Accieo#8858"
   ],
