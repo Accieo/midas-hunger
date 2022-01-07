@@ -8,7 +8,7 @@ public class MidasFoodComponents {
 
     public static final FoodComponent DRIED_GOLDEN_KELP = (new FoodComponent.Builder()
     .hunger(6).saturationModifier(0.7F)
-    .statusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 3600, 0), 1F))
+    .statusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 600, 0), 1F))
     .snack().alwaysEdible().build();
     
     public static final FoodComponent COOKED_GOLDEN_SALMON = (new FoodComponent.Builder()
