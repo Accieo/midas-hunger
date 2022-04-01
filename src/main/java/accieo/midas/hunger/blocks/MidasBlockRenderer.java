@@ -9,6 +9,7 @@ public class MidasBlockRenderer {
         BlockRenderLayerMap.INSTANCE.putBlock(MidasBlocks.SWEET_GOLDEN_BERRY_BUSH, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MidasBlocks.GOLDEN_KELP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MidasBlocks.GOLDEN_KELP_PLANT, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(MidasBlocks.GOLDEN_BEETROOTS, RenderLayer.getCutout());
     }
 
 }
