@@ -1,7 +1,5 @@
 package accieo.midas.hunger.blocks;
 
-import java.util.Random;
-
 import accieo.midas.hunger.items.MidasItems;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -31,6 +29,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
 public class SweetGoldenBerryBushBlock extends PlantBlock implements Fertilizable {

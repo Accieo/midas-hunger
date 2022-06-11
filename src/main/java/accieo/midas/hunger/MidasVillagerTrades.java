@@ -1,14 +1,13 @@
 package accieo.midas.hunger;
 
-import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.VillagerProfession;
 import static net.minecraft.server.command.CommandManager.literal;
-
 import accieo.midas.hunger.items.MidasItems;
 
 public class MidasVillagerTrades {
@@ -26,11 +25,13 @@ public class MidasVillagerTrades {
             factories.add(new SimpleTradeFactory(new TradeOffer(new ItemStack(Items.EMERALD, 4), new ItemStack(MidasItems.COOKED_GOLDEN_BEEF, 3), 10, 0, 0.15F)));
     });
     
-    CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
-        dispatcher.register(literal("fabric_refreshtrades").executes(context -> {
-            context.getSource().sendFeedback(new LiteralText("Refreshed trades"), false);
-            return 1;
-        }));
+    CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+        if (environment.dedicated) {
+            dispatcher.register(literal("fabric_refreshtrades").executes(context -> {
+                context.getSource().sendFeedback(Text.of("Refreshed trades"), false);
+                return 1;
+            }));
+        }
     });
     }
 }

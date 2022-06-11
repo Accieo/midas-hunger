@@ -1,9 +1,8 @@
 package accieo.midas.hunger;
 
-import java.util.Random;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.village.TradeOffer;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.village.TradeOffers;
 
 public class SimpleTradeFactory implements TradeOffers.Factory {
@@ -15,7 +14,6 @@ public class SimpleTradeFactory implements TradeOffers.Factory {
 
 	@Override
 	public TradeOffer create(Entity entity, Random random) {
-		// ALWAYS supply a copy of the offer.
 		return new TradeOffer(this.offer.toNbt());
 	}
 }
