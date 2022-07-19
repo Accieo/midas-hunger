@@ -1,6 +1,6 @@
 ---
 name: Translation
-about: 'Mod translated to: English (en_us)'
+about: Submit a translation
 title: 'Translation: <language>'
 labels: enhancement
 assignees: Accieo
