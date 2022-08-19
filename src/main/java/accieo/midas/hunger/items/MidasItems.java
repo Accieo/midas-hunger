@@ -5,10 +5,10 @@ import accieo.midas.hunger.blocks.MidasBlocks;
 import accieo.midas.hunger.foodcomponents.MidasFoodComponents;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 
 public class MidasItems {
-
 	public static final Item DRIED_GOLDEN_KELP = new Item(
 			new Item.Settings().group(ItemGroup.FOOD).food(MidasFoodComponents.DRIED_GOLDEN_KELP));
 	public static final Item COOKED_GOLDEN_SALMON = new Item(
@@ -43,7 +43,8 @@ public class MidasItems {
 			new Item.Settings().group(ItemGroup.FOOD).food(MidasFoodComponents.GOLDEN_PUMPKIN_PIE));
 	public static final Item GOLDEN_BEETROOT_SEEDS = new AliasedBlockItem(MidasBlocks.GOLDEN_BEETROOTS,
 			new Item.Settings().group(ItemGroup.MATERIALS));
-
+	public static final Item ENCHANTED_GOLDEN_CARROT = new EnchantedGoldenAppleItem(
+			new Item.Settings().group(ItemGroup.FOOD).rarity(Rarity.EPIC).food(Items.ENCHANTED_GOLDEN_APPLE.getFoodComponent()));
 	public static void registerItems() {
 
 		Registry.register(Registry.ITEM, new Identifier(MidasHunger.MOD_ID, "golden_kelp"), new BlockItem(
@@ -69,6 +70,7 @@ public class MidasItems {
 		Registry.register(Registry.ITEM, new Identifier(MidasHunger.MOD_ID, "cooked_golden_beef"), COOKED_GOLDEN_BEEF);
 		Registry.register(Registry.ITEM, new Identifier(MidasHunger.MOD_ID, "golden_pumpkin_pie"), GOLDEN_PUMPKIN_PIE);
 		Registry.register(Registry.ITEM, new Identifier(MidasHunger.MOD_ID, "golden_beetroot_seeds"), GOLDEN_BEETROOT_SEEDS);
+		Registry.register(Registry.ITEM, new Identifier(MidasHunger.MOD_ID, "enchanted_golden_carrot"), ENCHANTED_GOLDEN_CARROT);
 	}
 
 }
