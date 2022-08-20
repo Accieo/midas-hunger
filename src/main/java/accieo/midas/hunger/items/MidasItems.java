@@ -37,12 +37,12 @@ public class MidasItems {
 		return new Item(new Item.Settings().group(ItemGroup.FOOD).food(foodComponent));
 	}
 
-	private static void midasRegisterItem(String item_id, Item item) {
-		Registry.register(Registry.ITEM, new Identifier(MidasHunger.MOD_ID, item_id), item);
+	private static void midasRegisterItem(String itemId, Item item) {
+		Registry.register(Registry.ITEM, new Identifier(MidasHunger.MOD_ID, itemId), item);
 	}
 
-	private static void midasRegisterBlockItem(String item_id, Block block, ItemGroup group) {
-		Registry.register(Registry.ITEM, new Identifier(MidasHunger.MOD_ID, item_id), new BlockItem(block, new Item.Settings().group(group)));
+	private static void midasRegisterBlockItem(String itemId, Block block, ItemGroup group) {
+		Registry.register(Registry.ITEM, new Identifier(MidasHunger.MOD_ID, itemId), new BlockItem(block, new Item.Settings().group(group)));
 	}
 
 	public static void registerItems() {

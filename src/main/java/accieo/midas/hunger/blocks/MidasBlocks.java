@@ -19,8 +19,8 @@ public class MidasBlocks {
     public static final Block GOLDEN_KELP_PLANT = new GoldenKelpPlantBlock(AbstractBlock.Settings.of(Material.UNDERWATER_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS));
     public static final Block GOLDEN_BEETROOTS = new GoldenBeetrootsBlock(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 
-    private static void midasRegisterBlock(String item_id, Block block) {
-        Registry.register(Registry.BLOCK, new Identifier(MidasHunger.MOD_ID, item_id), block);
+    private static void midasRegisterBlock(String itemId, Block block) {
+        Registry.register(Registry.BLOCK, new Identifier(MidasHunger.MOD_ID, itemId), block);
     }
 
     public static void registerBlocks(){
