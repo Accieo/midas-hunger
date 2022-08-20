@@ -19,12 +19,15 @@ public class MidasBlocks {
     public static final Block GOLDEN_KELP_PLANT = new GoldenKelpPlantBlock(AbstractBlock.Settings.of(Material.UNDERWATER_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WET_GRASS));
     public static final Block GOLDEN_BEETROOTS = new GoldenBeetrootsBlock(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 
+    private static void midasRegisterBlock(String item_id, Block block) {
+        Registry.register(Registry.BLOCK, new Identifier(MidasHunger.MOD_ID, item_id), block);
+    }
     public static void registerBlocks(){
-        Registry.register(Registry.BLOCK, new Identifier(MidasHunger.MOD_ID, "sweet_golden_berry_bush"), SWEET_GOLDEN_BERRY_BUSH);
-        Registry.register(Registry.BLOCK, new Identifier(MidasHunger.MOD_ID, "dried_golden_kelp_block"), DRIED_GOLDEN_KELP_BLOCK);
-        Registry.register(Registry.BLOCK, new Identifier(MidasHunger.MOD_ID, "golden_kelp"), GOLDEN_KELP);
-        Registry.register(Registry.BLOCK, new Identifier(MidasHunger.MOD_ID, "golden_kelp_plant"), GOLDEN_KELP_PLANT);
-        Registry.register(Registry.BLOCK, new Identifier(MidasHunger.MOD_ID, "golden_beetroots"), GOLDEN_BEETROOTS);
+        midasRegisterBlock("sweet_golden_berry_bush", SWEET_GOLDEN_BERRY_BUSH);
+        midasRegisterBlock("dried_golden_kelp_block", DRIED_GOLDEN_KELP_BLOCK);
+        midasRegisterBlock("golden_kelp", GOLDEN_KELP);
+        midasRegisterBlock("golden_kelp_plant", GOLDEN_KELP_PLANT);
+        midasRegisterBlock("golden_beetroots", GOLDEN_BEETROOTS);
         FuelRegistry.INSTANCE.add(DRIED_GOLDEN_KELP_BLOCK, 5000);
     }
 
