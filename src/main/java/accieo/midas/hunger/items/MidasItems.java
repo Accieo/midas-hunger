@@ -32,6 +32,7 @@ public class MidasItems {
 			new Item.Settings().group(ItemGroup.FOOD).food(MidasFoodComponents.SWEET_GOLDEN_BERRIES));
 	public static final Item ENCHANTED_GOLDEN_CARROT = new EnchantedGoldenAppleItem(
 			new Item.Settings().group(ItemGroup.FOOD).rarity(Rarity.EPIC).food(Items.ENCHANTED_GOLDEN_APPLE.getFoodComponent()));
+
 	private static Item midasFoodItemBuilder(FoodComponent foodComponent) {
 		return new Item(new Item.Settings().group(ItemGroup.FOOD).food(foodComponent));
 	}
@@ -45,7 +46,6 @@ public class MidasItems {
 	}
 
 	public static void registerItems() {
-
 		midasRegisterBlockItem("golden_kelp", MidasBlocks.GOLDEN_KELP, ItemGroup.DECORATIONS);
 		midasRegisterBlockItem("dried_golden_kelp_block", MidasBlocks.DRIED_GOLDEN_KELP_BLOCK, ItemGroup.BUILDING_BLOCKS);
 		midasRegisterItem("dried_golden_kelp", DRIED_GOLDEN_KELP);
@@ -66,7 +66,5 @@ public class MidasItems {
 		midasRegisterItem("golden_pumpkin_pie", GOLDEN_PUMPKIN_PIE);
 		midasRegisterItem("golden_beetroot_seeds", GOLDEN_BEETROOT_SEEDS);
 		midasRegisterItem("enchanted_golden_carrot", ENCHANTED_GOLDEN_CARROT);
-
 	}
-
 }

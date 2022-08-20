@@ -22,6 +22,7 @@ public class MidasBlocks {
     private static void midasRegisterBlock(String item_id, Block block) {
         Registry.register(Registry.BLOCK, new Identifier(MidasHunger.MOD_ID, item_id), block);
     }
+
     public static void registerBlocks(){
         midasRegisterBlock("sweet_golden_berry_bush", SWEET_GOLDEN_BERRY_BUSH);
         midasRegisterBlock("dried_golden_kelp_block", DRIED_GOLDEN_KELP_BLOCK);
@@ -30,5 +31,4 @@ public class MidasBlocks {
         midasRegisterBlock("golden_beetroots", GOLDEN_BEETROOTS);
         FuelRegistry.INSTANCE.add(DRIED_GOLDEN_KELP_BLOCK, 5000);
     }
-
 }
