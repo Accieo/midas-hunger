@@ -5,4 +5,5 @@ Official GitHub Repository for the Fabric Minecraft mod [Midas Hunger](https://w
 Available languages:  
 :es: Spanish  
 :us: English  
-:cn: 中文(简体) - by lechiny
+:cn: 中文(简体) - by lechiny  
+:portugal: Portuguese - by [chronos_sacaria](https://www.curseforge.com/members/chronos_sacaria/projects)
