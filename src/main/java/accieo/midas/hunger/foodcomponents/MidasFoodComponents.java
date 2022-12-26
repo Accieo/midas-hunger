@@ -14,23 +14,23 @@ public class MidasFoodComponents {
     public static final FoodComponent COOKED_GOLDEN_SALMON = (new FoodComponent.Builder()
     .hunger(8).saturationModifier(1.0F)
     .statusEffect(new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 2100, 0), 1F))
-    .alwaysEdible().build();
+    .alwaysEdible().meat().build();
 
     public static final FoodComponent COOKED_GOLDEN_COD = (new FoodComponent.Builder()
     .hunger(7).saturationModifier(0.8F)
     .statusEffect(new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 1200, 0), 1F))
-    .alwaysEdible().build(); 
+    .alwaysEdible().meat().build();
 
     public static final FoodComponent GOLDEN_TURTLE_EGG = (new FoodComponent.Builder()
     .hunger(9).saturationModifier(1.2F)
     .statusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 400, 4), 1F)
     .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 400, 3), 1F))
-    .alwaysEdible().build(); 
+    .alwaysEdible().meat().build();
 
     public static final FoodComponent COOKED_GOLDEN_CHICKEN = (new FoodComponent.Builder()
     .hunger(8).saturationModifier(1.0F)
     .statusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 1200, 0), 1F))
-    .alwaysEdible().build();
+    .alwaysEdible().meat().build();
 
     public static final FoodComponent GOLDEN_BEETROOT = (new FoodComponent.Builder()
     .hunger(6).saturationModifier(0.8F)
@@ -63,19 +63,19 @@ public class MidasFoodComponents {
     .build());
 
     public static final FoodComponent COOKED_GOLDEN_MUTTON = (new FoodComponent.Builder()
-    .hunger(8).saturationModifier(1.2F)
+    .hunger(8).saturationModifier(1.2F).meat()
     .build());
 
     public static final FoodComponent COOKED_GOLDEN_PORKCHOP = (new FoodComponent.Builder()
-    .hunger(10).saturationModifier(1.2F)
+    .hunger(10).saturationModifier(1.2F).meat()
     .build());
 
     public static final FoodComponent COOKED_GOLDEN_RABBIT = (new FoodComponent.Builder()
-    .hunger(8).saturationModifier(1.2F)
+    .hunger(8).saturationModifier(1.2F).meat()
     .build());
 
     public static final FoodComponent COOKED_GOLDEN_BEEF = (new FoodComponent.Builder()
-    .hunger(10).saturationModifier(1.2F)
+    .hunger(10).saturationModifier(1.2F).meat()
     .build());
 
     public static final FoodComponent GOLDEN_PUMPKIN_PIE = (new FoodComponent.Builder()
