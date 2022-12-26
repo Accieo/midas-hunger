@@ -4,12 +4,12 @@ import accieo.midas.hunger.MidasHunger;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.BeetrootsBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.Registries;
 
 public class MidasBlocks {
     
@@ -20,7 +20,7 @@ public class MidasBlocks {
     public static final Block GOLDEN_BEETROOTS = new GoldenBeetrootsBlock(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 
     private static void midasRegisterBlock(String itemId, Block block) {
-        Registry.register(Registry.BLOCK, new Identifier(MidasHunger.MOD_ID, itemId), block);
+        Registry.register(Registries.BLOCK, new Identifier(MidasHunger.MOD_ID, itemId), block);
     }
 
     public static void registerBlocks(){
