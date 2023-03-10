@@ -1,0 +1,10 @@
+{
+  "type": "midashunger:enchanted_golden_carrot_woodland_mansion",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/woodland_mansion"
+    }
+  ],
+  "item": "midashunger:enchanted_golden_carrot"
+}

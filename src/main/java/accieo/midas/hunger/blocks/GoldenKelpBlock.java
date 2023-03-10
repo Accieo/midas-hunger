@@ -1,15 +1,19 @@
 package accieo.midas.hunger.blocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.KelpBlock;
+import accieo.midas.hunger.registry.BlockRegistry;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.KelpBlock;
+import org.jetbrains.annotations.NotNull;
 
 public class GoldenKelpBlock extends KelpBlock {
-    protected GoldenKelpBlock(Settings settings) {
-        super(settings);
+
+    public GoldenKelpBlock(Properties properties) {
+        super(properties);
     }
 
     @Override
-    protected Block getPlant() {
-        return MidasBlocks.GOLDEN_KELP_PLANT;
+    protected @NotNull Block getBodyBlock() {
+        return BlockRegistry.GOLDEN_KELP_PLANT.get();
     }
+
 }

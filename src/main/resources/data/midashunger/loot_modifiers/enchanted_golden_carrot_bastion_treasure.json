@@ -1,0 +1,10 @@
+{
+  "type": "midashunger:enchanted_golden_carrot_bastion_treasure",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/bastion_treasure"
+    }
+  ],
+  "item": "midashunger:enchanted_golden_carrot"
+}

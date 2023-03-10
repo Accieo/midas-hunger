@@ -1,48 +1,47 @@
 package accieo.midas.hunger.blocks;
 
-import accieo.midas.hunger.items.MidasItems;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.block.*;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import net.minecraft.world.event.GameEvent;
+import accieo.midas.hunger.registry.ItemRegistry;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.SweetBerryBushBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.NotNull;
 
 public class SweetGoldenBerryBushBlock extends SweetBerryBushBlock {
-   public SweetGoldenBerryBushBlock(Settings settings) {
-      super(settings);
-   }
-
-    @Environment(EnvType.CLIENT)
-    public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-       return new ItemStack(MidasItems.SWEET_GOLDEN_BERRIES);
+    public SweetGoldenBerryBushBlock(Properties properties) {
+        super(properties);
     }
 
-   @Override
-   public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-      int i = (Integer)state.get(AGE);
+    @Override
+    public @NotNull ItemStack getCloneItemStack(@NotNull BlockGetter getter, @NotNull BlockPos pos, @NotNull BlockState state) {
+        return new ItemStack(ItemRegistry.SWEET_GOLDEN_BERRIES.get());
+    }
+    @Override
+    public @NotNull InteractionResult use(BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
+        int i = state.getValue(AGE);
         boolean bl = i == 3;
-        if (!bl && player.getStackInHand(hand).isOf(Items.BONE_MEAL)) {
-            return ActionResult.PASS;
+        if (!bl && player.getItemInHand(hand).is(Items.BONE_MEAL)) {
+            return InteractionResult.PASS;
         } else if (i > 1) {
-            int j = 1 + world.random.nextInt(2);
-            dropStack(world, pos, new ItemStack(MidasItems.SWEET_GOLDEN_BERRIES, j + (bl ? 1 : 0)));
-            world.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
-            BlockState blockState = (BlockState)state.with(AGE, 1);
-            world.setBlockState(pos, blockState, 2);
-            world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
-            return ActionResult.success(world.isClient);
+            int j = 1 + level.random.nextInt(2);
+            popResource(level, pos, new ItemStack(ItemRegistry.SWEET_GOLDEN_BERRIES.get(), j + (bl ? 1 : 0)));
+            level.playSound((Player)null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+            BlockState blockState = (BlockState)state.setValue(AGE, 1);
+            level.setBlock(pos, blockState, 2);
+            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, blockState));
+            return InteractionResult.sidedSuccess(level.isClientSide);
         } else {
-            return super.onUse(state, world, pos, player, hand, hit);
+            return super.use(state, level, pos, player, hand, hit);
         }
-   }
+    }
 }

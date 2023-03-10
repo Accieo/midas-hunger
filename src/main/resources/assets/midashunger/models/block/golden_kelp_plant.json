@@ -2,5 +2,6 @@
   "parent": "minecraft:block/tinted_cross",
   "textures": {
     "cross": "midashunger:block/golden_kelp_plant"
-  }
+  },
+  "render_type": "cutout"
 }

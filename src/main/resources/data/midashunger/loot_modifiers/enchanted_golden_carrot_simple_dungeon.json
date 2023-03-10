@@ -1,0 +1,10 @@
+{
+  "type": "midashunger:enchanted_golden_carrot_simple_dungeon",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/simple_dungeon"
+    }
+  ],
+  "item": "midashunger:enchanted_golden_carrot"
+}
