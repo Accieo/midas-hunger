@@ -27,6 +27,7 @@ assignees: Accieo
     "item.midashunger.golden_pumpkin_pie": "Golden Pumpkin Pie",
     "item.midashunger.golden_kelp": "Golden Kelp",
     "item.midashunger.golden_beetroot_seeds": "Golden Beetroot Seeds",
+    "item.midashunger.enchanted_golden_carrot": "Enchanted Golden Carrot",
     "block.midashunger.sweet_golden_berry_bush": "Sweet Golden Berry Bush",
     "block.midashunger.dried_golden_kelp_block": "Dried Golden Kelp Block",
     "block.midashunger.golden_kelp": "Golden Kelp",
