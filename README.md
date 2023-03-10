@@ -6,4 +6,5 @@ Available languages:
 :es: Spanish  
 :us: English  
 :cn: 中文(简体) - by lechiny  
-:portugal: Portuguese - by [chronos_sacaria](https://www.curseforge.com/members/chronos_sacaria/projects)
+:portugal: Portuguese - by [chronos_sacaria](https://www.curseforge.com/members/chronos_sacaria/projects)  
+:de: German - by [0xmycf](https://github.com/0xmycf)
