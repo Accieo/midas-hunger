@@ -14,7 +14,6 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.WorldView;
 
 public class EatSweetGoldenBerriesGoal extends MoveToTargetPosGoal {
-    private static final int EATING_TIME = 40;
     protected int timer;
 
     public EatSweetGoldenBerriesGoal(FoxEntity entity, double speed, int range, int maxYDifference) {
@@ -31,7 +30,7 @@ public class EatSweetGoldenBerriesGoal extends MoveToTargetPosGoal {
 
     protected boolean isTargetPos(WorldView world, BlockPos pos) {
         BlockState blockState = world.getBlockState(pos);
-        return blockState.isOf(MidasBlocks.SWEET_GOLDEN_BERRY_BUSH) && (Integer)blockState.get(SweetGoldenBerryBushBlock.AGE) >= 2 || CaveVines.hasBerries(blockState);
+        return blockState.isOf(MidasBlocks.SWEET_GOLDEN_BERRY_BUSH) && blockState.get(SweetGoldenBerryBushBlock.AGE) >= 2 || CaveVines.hasBerries(blockState);
     }
 
     public void tick() {
@@ -53,18 +52,12 @@ public class EatSweetGoldenBerriesGoal extends MoveToTargetPosGoal {
             BlockState blockState = this.mob.world.getBlockState(this.targetPos);
             if (blockState.isOf(MidasBlocks.SWEET_GOLDEN_BERRY_BUSH)) {
                 this.pickSweetBerries(blockState);
-            } else if (CaveVines.hasBerries(blockState)) {
-                this.pickGlowBerries(blockState);
             }
         }
     }
 
-    private void pickGlowBerries(BlockState state) {
-        CaveVines.pickBerries(state, this.mob.world, this.targetPos);
-    }
-
     private void pickSweetBerries(BlockState state) {
-        int i = (Integer)state.get(SweetGoldenBerryBushBlock.AGE);
+        int i = state.get(SweetGoldenBerryBushBlock.AGE);
         state.with(SweetGoldenBerryBushBlock.AGE, 1);
         int j = 1 + this.mob.world.random.nextInt(2) + (i == 3 ? 1 : 0);
         ItemStack itemStack = this.mob.getEquippedStack(EquipmentSlot.MAINHAND);
@@ -78,7 +71,7 @@ public class EatSweetGoldenBerriesGoal extends MoveToTargetPosGoal {
         }
 
         this.mob.playSound(SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, 1.0F, 1.0F);
-        this.mob.world.setBlockState(this.targetPos, (BlockState)state.with(SweetGoldenBerryBushBlock.AGE, 1), 2);
+        this.mob.world.setBlockState(this.targetPos, state.with(SweetGoldenBerryBushBlock.AGE, 1), 2);
     }
 
     public boolean canStart() {
