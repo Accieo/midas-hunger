@@ -10,6 +10,8 @@ import net.minecraft.village.VillagerProfession;
 import static net.minecraft.server.command.CommandManager.literal;
 import accieo.midas.hunger.items.MidasItems;
 
+import java.util.function.Supplier;
+
 public class MidasVillagerTrades {
     public static void registerTrades(){
     TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 5, factories -> {
@@ -28,7 +30,7 @@ public class MidasVillagerTrades {
     CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
         if (environment.dedicated) {
             dispatcher.register(literal("fabric_refreshtrades").executes(context -> {
-                context.getSource().sendFeedback(Text.of("Refreshed trades"), false);
+                context.getSource().sendFeedback((Supplier<Text>) Text.of("Refreshed trades"), false);
                 return 1;
             }));
         }

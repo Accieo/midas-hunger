@@ -6,6 +6,7 @@ import accieo.midas.hunger.foodcomponents.MidasFoodComponents;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.registry.Registry;
@@ -39,17 +40,18 @@ public class MidasItems {
 		return new Item(new Item.Settings().food(foodComponent));
 	}
 
-	private static void midasRegisterItem(String itemId, Item item, ItemGroup group) {
+	private static void midasRegisterItem(String itemId, Item item, RegistryKey<ItemGroup> group) {
 		Registry.register(Registries.ITEM, new Identifier(MidasHunger.MOD_ID, itemId), item);
 		ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
 	}
 
-	private static void midasRegisterBlockItem(String itemId, Block block, ItemGroup group) {
+	private static void midasRegisterBlockItem(String itemId, Block block, RegistryKey<ItemGroup> group) {
 		Registry.register(Registries.ITEM, new Identifier(MidasHunger.MOD_ID, itemId), new BlockItem(block, new Item.Settings()));
 		ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(block));
 	}
 
 	public static void registerItems() {
+		// BlockItems -> Natural ; Items -> Food and Drink
 		midasRegisterBlockItem("golden_kelp", MidasBlocks.GOLDEN_KELP, ItemGroups.NATURAL);
 		midasRegisterBlockItem("dried_golden_kelp_block", MidasBlocks.DRIED_GOLDEN_KELP_BLOCK, ItemGroups.NATURAL);
 		midasRegisterItem("dried_golden_kelp", DRIED_GOLDEN_KELP, ItemGroups.FOOD_AND_DRINK);

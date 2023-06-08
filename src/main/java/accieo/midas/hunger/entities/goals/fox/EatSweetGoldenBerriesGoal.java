@@ -48,8 +48,8 @@ public class EatSweetGoldenBerriesGoal extends MoveToTargetPosGoal {
     }
 
     protected void eatSweetBerry() {
-        if (this.mob.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING)) {
-            BlockState blockState = this.mob.world.getBlockState(this.targetPos);
+        if (this.mob.getWorld().getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING)) {
+            BlockState blockState = this.mob.getWorld().getBlockState(this.targetPos);
             if (blockState.isOf(MidasBlocks.SWEET_GOLDEN_BERRY_BUSH)) {
                 this.pickSweetBerries(blockState);
             }
@@ -59,7 +59,7 @@ public class EatSweetGoldenBerriesGoal extends MoveToTargetPosGoal {
     private void pickSweetBerries(BlockState state) {
         int i = state.get(SweetGoldenBerryBushBlock.AGE);
         state.with(SweetGoldenBerryBushBlock.AGE, 1);
-        int j = 1 + this.mob.world.random.nextInt(2) + (i == 3 ? 1 : 0);
+        int j = 1 + this.mob.getWorld().random.nextInt(2) + (i == 3 ? 1 : 0);
         ItemStack itemStack = this.mob.getEquippedStack(EquipmentSlot.MAINHAND);
         if (itemStack.isEmpty()) {
             this.mob.equipStack(EquipmentSlot.MAINHAND, new ItemStack(MidasItems.SWEET_GOLDEN_BERRIES));
@@ -67,11 +67,11 @@ public class EatSweetGoldenBerriesGoal extends MoveToTargetPosGoal {
         }
 
         if (j > 0) {
-            Block.dropStack(this.mob.world, this.targetPos, new ItemStack(MidasItems.SWEET_GOLDEN_BERRIES, j));
+            Block.dropStack(this.mob.getWorld(), this.targetPos, new ItemStack(MidasItems.SWEET_GOLDEN_BERRIES, j));
         }
 
         this.mob.playSound(SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, 1.0F, 1.0F);
-        this.mob.world.setBlockState(this.targetPos, state.with(SweetGoldenBerryBushBlock.AGE, 1), 2);
+        this.mob.getWorld().setBlockState(this.targetPos, state.with(SweetGoldenBerryBushBlock.AGE, 1), 2);
     }
 
     public boolean canStart() {
