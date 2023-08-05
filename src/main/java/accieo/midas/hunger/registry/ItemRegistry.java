@@ -5,13 +5,11 @@ import accieo.midas.hunger.foods.MidasFoods;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
-
-import java.rmi.registry.Registry;
 
 public class ItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MidasHunger.MODID);
@@ -42,8 +40,8 @@ public class ItemRegistry {
         }
     });
 
-    public static void addCreative(CreativeModeTabEvent.BuildContents event) {
-        if (event.getTab() == CreativeModeTabs.FOOD_AND_DRINKS) {
+    public static void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(DRIED_GOLDEN_KELP);
             event.accept(COOKED_GOLDEN_SALMON);
             event.accept(COOKED_GOLDEN_COD);
@@ -61,7 +59,7 @@ public class ItemRegistry {
             event.accept(COOKED_GOLDEN_BEEF);
             event.accept(GOLDEN_PUMPKIN_PIE);
             event.accept(ENCHANTED_GOLDEN_CARROT);
-        } else if (event.getTab() == CreativeModeTabs.NATURAL_BLOCKS) {
+        } else if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(GOLDEN_KELP);
             event.accept(GOLDEN_BEETROOT_SEEDS);
             event.accept(DRIED_GOLDEN_KELP_BLOCK);

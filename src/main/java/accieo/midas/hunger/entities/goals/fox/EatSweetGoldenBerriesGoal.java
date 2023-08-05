@@ -51,24 +51,18 @@ public class EatSweetGoldenBerriesGoal extends MoveToBlockGoal {
     }
 
     protected void onReachedTarget() {
-        if (this.mob.level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
-            BlockState blockState = this.mob.level.getBlockState(this.blockPos);
+        if (this.mob.level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
+            BlockState blockState = this.mob.level().getBlockState(this.blockPos);
             if (blockState.is(BlockRegistry.SWEET_GOLDEN_BERRY_BUSH.get())) {
                 this.pickSweetBerries(blockState);
-            } else if (CaveVines.hasGlowBerries(blockState)) {
-                this.pickGlowBerries(blockState);
             }
         }
-    }
-
-    private void pickGlowBerries(BlockState state) {
-        CaveVines.use(state, this.mob.level, this.blockPos);
     }
 
     private void pickSweetBerries(BlockState state) {
         int i = (Integer)state.getValue(SweetGoldenBerryBushBlock.AGE);
         state.setValue(SweetGoldenBerryBushBlock.AGE, 1);
-        int j = 1 + this.mob.level.random.nextInt(2) + (i == 3 ? 1 : 0);
+        int j = 1 + this.mob.level().random.nextInt(2) + (i == 3 ? 1 : 0);
         ItemStack itemStack = this.mob.getItemBySlot(EquipmentSlot.MAINHAND);
         if (itemStack.isEmpty()) {
             this.mob.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ItemRegistry.SWEET_GOLDEN_BERRIES.get()));
@@ -76,11 +70,11 @@ public class EatSweetGoldenBerriesGoal extends MoveToBlockGoal {
         }
 
         if (j > 0) {
-            Block.popResource(this.mob.level, this.blockPos, new ItemStack(ItemRegistry.SWEET_GOLDEN_BERRIES.get(), j));
+            Block.popResource(this.mob.level(), this.blockPos, new ItemStack(ItemRegistry.SWEET_GOLDEN_BERRIES.get(), j));
         }
 
         this.mob.playSound(SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, 1.0F, 1.0F);
-        this.mob.level.setBlock(this.blockPos, (BlockState)state.setValue(SweetGoldenBerryBushBlock.AGE, 1), 2);
+        this.mob.level().setBlock(this.blockPos, (BlockState)state.setValue(SweetGoldenBerryBushBlock.AGE, 1), 2);
     }
 
     public boolean canUse() {
