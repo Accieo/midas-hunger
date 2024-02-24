@@ -4,6 +4,7 @@ import accieo.midas.hunger.MidasHunger;
 import accieo.midas.hunger.blocks.MidasBlocks;
 import accieo.midas.hunger.foodcomponents.MidasFoodComponents;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.registry.RegistryKey;
@@ -50,6 +51,18 @@ public class MidasItems {
 		ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(block));
 	}
 
+	private static void midasRegisterCompostableItems() {
+		// Vanilla items
+		CompostingChanceRegistry.INSTANCE.add(Items.GOLDEN_CARROT, 1.0F);
+		// Midas hunger
+		CompostingChanceRegistry.INSTANCE.add(GOLDEN_BEETROOT_SEEDS, 0.5F);
+		CompostingChanceRegistry.INSTANCE.add(POISONOUS_GOLDEN_POTATO, 0.5F);
+		CompostingChanceRegistry.INSTANCE.add(GOLDEN_BEETROOT, 0.7F);
+		CompostingChanceRegistry.INSTANCE.add(SWEET_GOLDEN_BERRIES, 0.7F);
+		CompostingChanceRegistry.INSTANCE.add(DRIED_GOLDEN_KELP, 0.7F);
+		CompostingChanceRegistry.INSTANCE.add(GOLDEN_PUMPKIN_PIE, 1.0F);
+	}
+
 	public static void registerItems() {
 		// BlockItems -> Natural ; Items -> Food and Drink
 		midasRegisterBlockItem("golden_kelp", MidasBlocks.GOLDEN_KELP, ItemGroups.NATURAL);
@@ -72,5 +85,7 @@ public class MidasItems {
 		midasRegisterItem("golden_pumpkin_pie", GOLDEN_PUMPKIN_PIE, ItemGroups.FOOD_AND_DRINK);
 		midasRegisterItem("golden_beetroot_seeds", GOLDEN_BEETROOT_SEEDS, ItemGroups.NATURAL);
 		midasRegisterItem("enchanted_golden_carrot", ENCHANTED_GOLDEN_CARROT, ItemGroups.FOOD_AND_DRINK);
+		// Compostable items
+		midasRegisterCompostableItems();
 	}
 }
