@@ -5,6 +5,7 @@ Official GitHub Repository for the Minecraft mod [Midas Hunger](https://www.curs
 Available languages:  
 :es: Spanish  
 :us: English  
-:cn: 中文(简体) - by lechiny  
+:cn: Chinese (简体) - by lechiny  
 :portugal: Portuguese - by [chronos_sacaria](https://www.curseforge.com/members/chronos_sacaria/projects)  
-:de: German - by [0xmycf](https://github.com/0xmycf)
+:de: German - by [0xmycf](https://github.com/0xmycf)  
+🇯🇵 Japanese - by Endilcrafter
