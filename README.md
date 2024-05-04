@@ -9,4 +9,5 @@ Available languages:
 :portugal: Portuguese - by [chronos_sacaria](https://www.curseforge.com/members/chronos_sacaria/projects)  
 :de: German - by [0xmycf](https://github.com/0xmycf)  
 :jp: Japanese - by Endilcrafter  
-:fr: French - by Mozork01
+:fr: French - by Mozork01  
+:kr: Korean - by kirito5572
