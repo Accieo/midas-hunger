@@ -14,6 +14,6 @@ public class SimpleTradeFactory implements TradeOffers.Factory {
 
 	@Override
 	public TradeOffer create(Entity entity, Random random) {
-		return new TradeOffer(this.offer.toNbt());
+		return this.offer;
 	}
 }

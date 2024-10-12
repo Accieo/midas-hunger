@@ -5,7 +5,7 @@
   "name": "Midas Hunger",
   "description": "Adds golden variants of food items that give different status effects",
   "authors": [
-    "Accieo#8858"
+    "Accieo"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/midas-hunger-fabric",
@@ -28,9 +28,9 @@
     "midashunger.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.21",
-    "minecraft": "~1.20",
-    "java": ">=17",
+    "fabricloader": ">=0.16.2",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
     "fabric-api": "*"
   },
   "suggests": {

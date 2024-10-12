@@ -6,12 +6,15 @@ import accieo.midas.hunger.foodcomponents.MidasFoodComponents;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.FoodComponent;
+import net.minecraft.component.type.FoodComponents;
 import net.minecraft.item.*;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
+import net.minecraft.util.Rarity;
 
 public class MidasItems {
 	public static final Item DRIED_GOLDEN_KELP = midasFoodItemBuilder(MidasFoodComponents.DRIED_GOLDEN_KELP);
@@ -28,26 +31,26 @@ public class MidasItems {
 	public static final Item COOKED_GOLDEN_RABBIT = midasFoodItemBuilder(MidasFoodComponents.COOKED_GOLDEN_RABBIT);
 	public static final Item COOKED_GOLDEN_BEEF = midasFoodItemBuilder(MidasFoodComponents.COOKED_GOLDEN_BEEF);
 	public static final Item GOLDEN_PUMPKIN_PIE = midasFoodItemBuilder(MidasFoodComponents.GOLDEN_PUMPKIN_PIE);
-	public static final Item GOLDEN_BEETROOT_SOUP = new StewItem(
-			new Item.Settings().maxCount(1).food(MidasFoodComponents.GOLDEN_BEETROOT_SOUP));
+	public static final Item GOLDEN_BEETROOT_SOUP = midasFoodItemBuilder(MidasFoodComponents.GOLDEN_BEETROOT_SOUP);
 	public static final Item GOLDEN_BEETROOT_SEEDS = new AliasedBlockItem(MidasBlocks.GOLDEN_BEETROOTS,
 			new Item.Settings());
 	public static final Item SWEET_GOLDEN_BERRIES = new AliasedBlockItem(MidasBlocks.SWEET_GOLDEN_BERRY_BUSH,
 			new Item.Settings().food(MidasFoodComponents.SWEET_GOLDEN_BERRIES));
-	public static final Item ENCHANTED_GOLDEN_CARROT = new EnchantedGoldenAppleItem(
-			new Item.Settings().rarity(Rarity.EPIC).food(Items.ENCHANTED_GOLDEN_APPLE.getFoodComponent()));
+	public static final Item ENCHANTED_GOLDEN_CARROT = new Item(new Item.Settings().rarity(Rarity.EPIC)
+			.food(MidasFoodComponents.ENCHANTED_GOLDEN_CARROT)
+			.component(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE, true));
 
 	private static Item midasFoodItemBuilder(FoodComponent foodComponent) {
 		return new Item(new Item.Settings().food(foodComponent));
 	}
 
 	private static void midasRegisterItem(String itemId, Item item, RegistryKey<ItemGroup> group) {
-		Registry.register(Registries.ITEM, new Identifier(MidasHunger.MOD_ID, itemId), item);
+		Registry.register(Registries.ITEM, Identifier.of(MidasHunger.MOD_ID, itemId), item);
 		ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
 	}
 
 	private static void midasRegisterBlockItem(String itemId, Block block, RegistryKey<ItemGroup> group) {
-		Registry.register(Registries.ITEM, new Identifier(MidasHunger.MOD_ID, itemId), new BlockItem(block, new Item.Settings()));
+		Registry.register(Registries.ITEM, Identifier.of(MidasHunger.MOD_ID, itemId), new BlockItem(block, new Item.Settings()));
 		ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(block));
 	}
 

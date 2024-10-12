@@ -1,22 +1,24 @@
 package accieo.midas.hunger.loottables;
 
 import accieo.midas.hunger.items.MidasItems;
-import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
-import net.minecraft.util.Identifier;
+import net.minecraft.registry.RegistryKey;
 
 public class MidasLootTables {
 
-    private static void modifyLootTable(Identifier tableId) {
-        LootTableEvents.MODIFY.register(((resourceManager, lootManager, id, tableBuilder, source) -> {
-            if (source.isBuiltin() && tableId.equals(id)) {
+    private static void modifyLootTable(RegistryKey<LootTable> tableId) {
+        LootTableEvents.MODIFY.register(((key, builder, source, registries) -> {
+            if (key.equals(tableId)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(BinomialLootNumberProvider.create(1, 0.1F))
                         .with(ItemEntry.builder(MidasItems.ENCHANTED_GOLDEN_CARROT).weight(1).build());
-                tableBuilder.pool(poolBuilder);
+
+                builder.pool(poolBuilder);
                 System.out.printf("Enchanted golden carrot was added to: %s%n", tableId);
             }
         }));
