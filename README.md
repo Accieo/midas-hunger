@@ -1,5 +1,6 @@
 # Midas-Hunger
 
+![CurseForge](https://cf.way2muchnoise.eu/full_436224_downloads.svg)  
 Official GitHub Repository for the Minecraft mod [Midas Hunger](https://www.curseforge.com/minecraft/mc-mods/midas-hunger-fabric).
 
 Available languages:  
