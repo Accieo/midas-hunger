@@ -11,4 +11,5 @@ Available languages:
 :de: German - by [0xmycf](https://github.com/0xmycf)  
 :jp: Japanese - by Endilcrafter  
 :fr: French - by Mozork01  
-:kr: Korean - by kirito5572
+:kr: Korean - by kirito5572  
+:pl: Polish - by [Arison7](https://github.com/Arison7)
