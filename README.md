@@ -12,4 +12,5 @@ Available languages:
 :jp: Japanese - by Endilcrafter  
 :fr: French - by Mozork01  
 :kr: Korean - by kirito5572  
-:poland: Polish - by [Arison7](https://github.com/Arison7)
+:poland: Polish - by [Arison7](https://github.com/Arison7)  
+🇺🇦 Ukranian - by StarmanMine142
