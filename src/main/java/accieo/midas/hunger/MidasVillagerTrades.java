@@ -31,7 +31,7 @@ public class MidasVillagerTrades {
     CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
         if (environment.dedicated) {
             dispatcher.register(literal("fabric_refreshtrades").executes(context -> {
-                context.getSource().sendFeedback((Supplier<Text>) Text.of("Refreshed trades"), false);
+                context.getSource().sendFeedback(() -> Text.of("Refreshed trades"), false);
                 return 1;
             }));
         }
