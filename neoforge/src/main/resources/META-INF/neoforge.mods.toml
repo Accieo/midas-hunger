@@ -1,0 +1,31 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+issueTrackerURL = "https://github.com/Accieo/midas-hunger/issues"
+license = "MIT"
+
+[[mods]]
+modId = "midashunger"
+version = "${version}"
+displayName = "Midas Hunger"
+authors = "Accieo"
+description = '''
+Adds golden variants of food items that give different status effects
+'''
+logoFile = "assets/midashunger/icon.png"
+
+[[dependencies.midashunger]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.midashunger]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[mixins]]
+config = "midashunger.mixins.json"

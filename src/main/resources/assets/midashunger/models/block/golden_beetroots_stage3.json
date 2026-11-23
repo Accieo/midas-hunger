@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/crop",
-  "textures": {
-    "crop": "midashunger:block/golden_beetroots_stage3"
-  }
-}

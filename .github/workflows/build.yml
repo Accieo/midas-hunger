@@ -1,0 +1,41 @@
+# Builds the project (including the Spotless format check) for every push and
+# pull request. This catches issues that only occur on a clean checkout and
+# provides a first line of defence against bad commits.
+
+name: build
+on:
+  pull_request:
+  push:
+    # main is built by release.yml, which calls this workflow
+    branches-ignore:
+      - main
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v7
+      - name: validate gradle wrapper
+        uses: gradle/actions/wrapper-validation@v6
+      - name: setup jdk
+        uses: actions/setup-java@v6
+        with:
+          java-version: '21'
+          distribution: 'microsoft'
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
+      - name: build
+        run: ./gradlew build
+      - name: capture build artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: Artifacts
+          path: |
+            neoforge/build/libs/
+            fabric/build/libs/

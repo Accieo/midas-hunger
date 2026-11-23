@@ -31,3 +31,12 @@ bin/
 # fabric
 
 run/
+
+# architectury
+
+.architectury-transformer/
+
+# env
+
+.env
+/scripts

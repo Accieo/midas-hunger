@@ -1,0 +1,11 @@
+{
+  "values": {
+    "minecraft:golden_carrot": { "chance": 1.0 },
+    "midashunger:golden_beetroot_seeds": { "chance": 0.5 },
+    "midashunger:poisonous_golden_potato": { "chance": 0.5 },
+    "midashunger:golden_beetroot": { "chance": 0.7 },
+    "midashunger:sweet_golden_berries": { "chance": 0.7 },
+    "midashunger:dried_golden_kelp": { "chance": 0.7 },
+    "midashunger:golden_pumpkin_pie": { "chance": 1.0 }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "midashunger",
+  "version": "${version}",
+  "name": "Midas Hunger",
+  "description": "Adds golden variants of food items that give different status effects",
+  "authors": [
+    "Accieo"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/midas-hunger-fabric",
+    "sources": "https://github.com/Accieo/midas-hunger",
+    "issues": "https://github.com/Accieo/midas-hunger/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/midashunger/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.accieo.midashunger.fabric.MidasHungerFabric"
+    ],
+    "client": [
+      "com.accieo.midashunger.fabric.client.MidasHungerFabricClient"
+    ]
+  },
+  "mixins": [
+    "midashunger.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.2",
+    "minecraft": "~1.21",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
