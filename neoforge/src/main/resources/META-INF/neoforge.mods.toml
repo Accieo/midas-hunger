@@ -8,6 +8,7 @@ modId = "midashunger"
 version = "${version}"
 displayName = "Midas Hunger"
 authors = "Accieo"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/midas-hunger"
 description = '''
 Adds golden variants of food items that give different status effects
 '''
