@@ -1,6 +1,6 @@
 # Midas-Hunger
 
-![CurseForge](https://cf.way2muchnoise.eu/full_436224_downloads.svg)   ![Modrinth Downloads](https://img.shields.io/modrinth/dt/abF2tqnb?style=flat&logo=modrinth)  
+![CurseForge Downloads](https://img.shields.io/curseforge/dt/436224?logo=curseforge&color=%23F16436) ![Modrinth Downloads](https://img.shields.io/modrinth/dt/abF2tqnb?style=flat&logo=modrinth)  
 Official GitHub Repository for the Minecraft mod [Midas Hunger](https://www.curseforge.com/minecraft/mc-mods/midas-hunger).
 
 Available languages:  
