@@ -1,19 +1,15 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-      "###",
-      "#X#",
-      "###"
-    ],
-    "key": {
-      "#": {
-        "item": "minecraft:gold_nugget"
-      },
-      "X": {
-        "item": "minecraft:pumpkin_pie"
-      }
-    },
-    "result": {
-      "id": "midashunger:golden_pumpkin_pie"
-    }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": "minecraft:gold_nugget",
+    "X": "minecraft:pumpkin_pie"
+  },
+  "result": {
+    "id": "midashunger:golden_pumpkin_pie"
   }
+}

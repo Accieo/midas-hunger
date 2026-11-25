@@ -1,6 +1,5 @@
 {
   "parent": "block/cross",
-  "render_type": "minecraft:cutout",
   "textures": {
     "cross": "midashunger:block/sweet_golden_berry_bush_stage0"
   }

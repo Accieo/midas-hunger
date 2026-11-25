@@ -7,7 +7,7 @@ import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.providers.number.BinomialDistributionGenerator;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 public class MidasLootTables {
 
@@ -23,7 +23,7 @@ public class MidasLootTables {
 
   public static LootPool.Builder createPool() {
     return LootPool.lootPool()
-        .setRolls(BinomialDistributionGenerator.binomial(1, 0.1F))
+        .setRolls(ContextIntProviders.binomial(1, 0.1F))
         .add(LootItem.lootTableItem(MidasItems.ENCHANTED_GOLDEN_CARROT).setWeight(1));
   }
 }

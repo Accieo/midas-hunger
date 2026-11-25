@@ -1,19 +1,15 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-      "###",
-      "#X#",
-      "###"
-    ],
-    "key": {
-      "#": {
-        "item": "minecraft:gold_nugget"
-      },
-      "X": {
-        "item": "minecraft:cooked_mutton"
-      }
-    },
-    "result": {
-      "id": "midashunger:cooked_golden_mutton"
-    }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": "minecraft:gold_nugget",
+    "X": "minecraft:cooked_mutton"
+  },
+  "result": {
+    "id": "midashunger:cooked_golden_mutton"
   }
+}

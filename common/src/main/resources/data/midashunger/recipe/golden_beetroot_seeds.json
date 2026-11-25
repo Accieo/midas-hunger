@@ -1,9 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "midashunger:golden_beetroot"
-    }
+    "midashunger:golden_beetroot"
   ],
   "result": {
     "id": "midashunger:golden_beetroot_seeds"

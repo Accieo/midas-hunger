@@ -6,12 +6,8 @@
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:gold_nugget"
-    },
-    "X": {
-      "item": "minecraft:kelp"
-    }
+    "#": "minecraft:gold_nugget",
+    "X": "minecraft:kelp"
   },
   "result": {
     "id": "midashunger:golden_kelp"

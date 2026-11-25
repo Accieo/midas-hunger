@@ -1,19 +1,15 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-      "BBB",
-      "BBB",
-      " M "
-    ],
-    "key": {
-      "B": {
-        "item": "midashunger:golden_beetroot"
-      },
-      "M": {
-        "item": "minecraft:bowl"
-      }
-    },
-    "result": {
-      "id": "midashunger:golden_beetroot_soup"
-    }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BBB",
+    " M "
+  ],
+  "key": {
+    "B": "midashunger:golden_beetroot",
+    "M": "minecraft:bowl"
+  },
+  "result": {
+    "id": "midashunger:golden_beetroot_soup"
   }
+}

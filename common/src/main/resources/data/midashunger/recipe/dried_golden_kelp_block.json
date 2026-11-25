@@ -1,35 +1,17 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-      {
-        "item": "midashunger:dried_golden_kelp"
-      },
-      {
-        "item": "midashunger:dried_golden_kelp"
-      },
-      {
-        "item": "midashunger:dried_golden_kelp"
-      },
-      {
-        "item": "midashunger:dried_golden_kelp"
-      },
-      {
-        "item": "midashunger:dried_golden_kelp"
-      },
-      {
-        "item": "midashunger:dried_golden_kelp"
-      },
-      {
-        "item": "midashunger:dried_golden_kelp"
-      },
-      {
-        "item": "midashunger:dried_golden_kelp"
-      },
-      {
-        "item": "midashunger:dried_golden_kelp"
-      }
-    ],
-    "result": {
-      "id": "midashunger:dried_golden_kelp_block"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "midashunger:dried_golden_kelp",
+    "midashunger:dried_golden_kelp",
+    "midashunger:dried_golden_kelp",
+    "midashunger:dried_golden_kelp",
+    "midashunger:dried_golden_kelp",
+    "midashunger:dried_golden_kelp",
+    "midashunger:dried_golden_kelp",
+    "midashunger:dried_golden_kelp",
+    "midashunger:dried_golden_kelp"
+  ],
+  "result": {
+    "id": "midashunger:dried_golden_kelp_block"
   }
+}

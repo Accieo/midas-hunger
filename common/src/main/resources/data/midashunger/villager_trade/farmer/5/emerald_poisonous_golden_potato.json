@@ -1,0 +1,13 @@
+{
+  "gives": {
+    "id": "midashunger:poisonous_golden_potato",
+    "count": 2
+  },
+  "max_uses": 2,
+  "reputation_discount": 0.15,
+  "wants": {
+    "id": "minecraft:emerald",
+    "count": 4
+  },
+  "xp": 0
+}

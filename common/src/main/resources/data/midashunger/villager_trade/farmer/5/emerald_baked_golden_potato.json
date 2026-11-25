@@ -1,0 +1,13 @@
+{
+  "gives": {
+    "id": "midashunger:baked_golden_potato",
+    "count": 3
+  },
+  "max_uses": 12,
+  "reputation_discount": 0.15,
+  "wants": {
+    "id": "minecraft:emerald",
+    "count": 3
+  },
+  "xp": 0
+}

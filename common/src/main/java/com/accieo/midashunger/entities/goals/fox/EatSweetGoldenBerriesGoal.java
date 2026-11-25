@@ -4,15 +4,16 @@ import com.accieo.midashunger.blocks.MidasBlocks;
 import com.accieo.midashunger.blocks.SweetGoldenBerryBushBlock;
 import com.accieo.midashunger.items.MidasItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.goal.MoveToBlockGoal;
-import net.minecraft.world.entity.animal.Fox;
+import net.minecraft.world.entity.animal.fox.Fox;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gamerules.GameRules;
 
 public class EatSweetGoldenBerriesGoal extends MoveToBlockGoal {
   protected int timer;
@@ -54,7 +55,8 @@ public class EatSweetGoldenBerriesGoal extends MoveToBlockGoal {
   }
 
   protected void eatSweetBerry() {
-    if (this.mob.level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
+    if (this.mob.level() instanceof ServerLevel level
+        && level.getGameRules().get(GameRules.MOB_GRIEFING)) {
       BlockState blockState = this.mob.level().getBlockState(this.blockPos);
       if (blockState.is(MidasBlocks.SWEET_GOLDEN_BERRY_BUSH)) {
         this.pickSweetBerries(blockState);
@@ -64,7 +66,7 @@ public class EatSweetGoldenBerriesGoal extends MoveToBlockGoal {
 
   private void pickSweetBerries(BlockState state) {
     int i = state.getValue(SweetGoldenBerryBushBlock.AGE);
-    int j = 1 + this.mob.level().random.nextInt(2) + (i == 3 ? 1 : 0);
+    int j = 1 + this.mob.getRandom().nextInt(2) + (i == 3 ? 1 : 0);
     ItemStack itemStack = this.mob.getItemBySlot(EquipmentSlot.MAINHAND);
     if (itemStack.isEmpty()) {
       this.mob.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(MidasItems.SWEET_GOLDEN_BERRIES));
